@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<title> check hexagon order </title>
+<script>
+var textarea = document.getElementById('textareabox');
+
+var word = 'something';
+
+var textValue=textarea.value;  //-> don't use .innerHTML since there is no HTML in a textarea element
+
+if (textValue.indexOf(word)!=-1)
+{
+  alert('found')
+}
+</script>
