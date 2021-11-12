@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<title>~LOGIN~</title>
+<form>
+  <input type="password" id="ggs">
+  <label for="ggs"></label>
+</form>
+<script>
+var textarea = document.getElementById('ggs');
+
+var word = 'a312';
+
+var textValue=textarea.value;  //-> don't use .innerHTML since there is no HTML in a textarea element
+
+if (textValue.indexOf(word)!=-1)
+{
+  alert('found');
+  console.log('found');
+}
+</script>
