@@ -3,9 +3,15 @@
 <h1>Spotify Web Playback SDK Quick Start</h1>
 <p> updated 2</p>
 <script src="https://sdk.scdn.co/spotify-player.js"></script>
+<form>
+  <input type="password" id="ggs">
+  <label for="ggs"></label>
+</form>
 <script>
+var token1 = document.getElementById('ggs');
+
 window.onSpotifyWebPlaybackSDKReady = () => {
-  const token = 'BQC7Ze6CCuW43H8a6aUXn9Z_KpPdMRwxCmPswIPGFx9dg1H90Jg-XkMjXCc689QeGVHnTMpHjExgO8mVCIMHkYhIsGtMLzdJSqFuEs7irnDusvensY-AXpTtMxRjN66Y9RqZqRfH2qspZ0k9T7qJ8XPqeggG9hsCHoGM4bAA80FmxPesJm0';
+  const token = token1;
   const player = new Spotify.Player({
     name: 'Web Playback SDK Quick Start Player',
     getOAuthToken: cb => { cb(token); },
