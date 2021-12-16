@@ -1,12 +1,27 @@
 <!DOCTYPE html>
-
+<tt id="demo"></tt>
+<br>
+<tt id="demo2"></tt>
 <button onclick="myFunction()">Click</button>
-<p id="demo"></p>
+<br>
 
+<button onclick="Upgrade()">Click to upgrade</button>
 <script>
 var count = 0;
+var upgrade = 0:
+var upgrades = 0;
+//0 off 1 on
 function myFunction() {
+  
   count++;
-  document.getElementById("demo").innerHTML = count++;
+  document.getElementById("demo").innerHTML = count;
+  if (count < 50){
+    document.getElementById("demo").innerHTML = "upgrade avaliable";
+}
+function Upgrade() {
+  if (count < 50){
+    count-;
+    
+  }
 }
 </script>
