@@ -1,25 +1,30 @@
 <!DOCTYPE html>
-<title> Quick clicker </title>
-<h1> Quick Clicker 4</h1>
-<img src="https://i.imgur.com/H88TRen.png" style="width: 117px; height: 116px;">
-<br>
-<tt> Messages: </tt>
-<tt id="log"></tt>
-<br>
-<tt> (spendable) Clicks: </tt>
-<tt id="demo"></tt>
-<br>
-<tt> Total clicks: </tt>
-<tt id="totalc"></tt>
-<br>
-<tt> Upgrades: </tt>
-<tt id="demo2"></tt>
-<br>
-<button onclick="myFunction()">Click</button>
-<br>
-<button onclick="Upgrade()">Click to upgrade</button>
+<html>
+	<head>
+		<title> Quick clicker </title>
+		<meta name="description" content="A clicker programmed in javascript and html">
+	</head>
+		<body>
+		<h1> Quick Clicker 4</h1>
+		<img src="https://i.imgur.com/H88TRen.png" style="width: 117px; height: 116px;">
+		<br>
+		<tt> Messages: </tt>
+		<tt id="log"></tt>
+		<br>
+		<tt> (spendable) Clicks: </tt>
+		<tt id="demo"></tt>
+		<br>
+		<tt> Total clicks: </tt>
+		<tt id="totalc"></tt>
+		<br>
+		<tt> Upgrades: </tt>
+		<tt id="demo2"></tt>
+		<br>
+		<button onclick="myFunction()">Click</button>
+		<br>
+		<button onclick="Upgrade()">Click to upgrade</button>
 
-<script>
+		<script>
 var count = 0;
 var spendable = 0;
 var upgrade = 0;
@@ -62,4 +67,8 @@ function Upgrade() {
     	console.log("SYS: success")
     }
 }    
-</script>
+		</script>
+	</body>
+
+
+</html>
