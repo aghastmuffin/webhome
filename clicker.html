@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <title> Quick clicker </title>
-<h1> Quick Clicker 2</h1>
-<tt> Messages </tt>
+<h1> Quick Clicker 4</h1>
+<img src="https://i.imgur.com/H88TRen.png" style="width: 117px; height: 116px;">
+<br>
+<tt> Messages: </tt>
 <tt id="log"></tt>
 <br>
 <tt> (spendable) Clicks: </tt>
@@ -23,6 +25,9 @@ var spendable = 0;
 var upgrade = 0;
 var upgrades = 0;
 var counting = 0;
+document.getElementById("demo").innerHTML = spendable;
+document.getElementById("totalc").innerHTML = count;
+document.getElementById("demo2").innerHTML = upgrades;
 //0 off 1 on
 function myFunction() {
   console.log(count)
@@ -43,11 +48,15 @@ function myFunction() {
   }
   document.getElementById("demo").innerHTML = spendable;
   document.getElementById("totalc").innerHTML = count;
+  document.getElementById("demo2").innerHTML = upgrades;
 
 }
 function Upgrade() {
+	document.getElementById("log").innerHTML = "Upgrade triggered";
 	if (spendable > 50) {
 		var spendable = spendable - 50;
+        document.getElementById("demo").innerHTML = spendable;
+        document.getElementById("log").innerHTML = "Removed 50 from spendable clicks for: UPGRADE";
 		console.log("SYS: UPGRADE")
     	upgrades++;
     	console.log("SYS: success")
