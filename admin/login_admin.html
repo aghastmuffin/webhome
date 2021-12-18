@@ -1,19 +1,50 @@
 <!DOCTYPE html>
-<title>~LOGIN~</title>
-<form>
-  <input type="password" id="ggs">
-  <label for="ggs"></label>
-</form>
-<script>
-var textarea = document.getElementById('ggs');
+<html>
+	<head>
 
-var word = 'a312';
+		<title>~LOGIN~</title>
+        <style>
 
-var textValue=textarea.value;  //-> don't use .innerHTML since there is no HTML in a textarea element
+</style>
+    </head>
+    <body>
+		<form>
+        	<tt id="err"> </tt>
+        	<tt> Name </tt>
+        	<br>
+        	<input type="text">
+            <br>
+            <tt> Password: </tt>
+            <br>
+  			<input type="password" id="ggs">
+  			<label for="ggs"></label>
+            <br>
+            <button onclick="myFunction()">Login</button>
+		</form>
+		<script>
+var attempts = 3;
+function myFunction() {
+	var textarea = document.getElementById('ggs');
+	
+	var word = 'a312';
 
-if (textValue.indexOf(word)!=-1)
-{
-  alert('found');
-  console.log('found');
+	var textValue=textarea.value;  //-> don't use .innerHTML since there is no HTML in a 	textarea element
+	if (attemps > 0) { 
+		if (textValue.indexOf(word)!=-1) {
+  			alert('found');
+  			console.log('found');
+		}
+		else {
+  			alert("login either expired, or wrong password");
+        	document.getElementById("err").innerHTML = "Uh Oh! Wrong Username/Password!";
+        	attemps-;
+		}
+	}
+    else {
+    window.location.replace("https://aghastmuffin.github.io/webhome/admin/locked");
 }
-</script>
+		</script>
+	</body>
+</html>
+<html>
+
