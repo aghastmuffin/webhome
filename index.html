@@ -30,7 +30,7 @@
         <br>
         <br>
         <button type="button", onclick="myFunction()"> A random button </button>
-        <tt> .. </tt>
+        <tt id="dots1"></tt>
         <br>
         <br>
         <br>
@@ -48,7 +48,9 @@
         <script>
 var dots = "";
 function myFunction() {
-    dots += dots + "."; 
+    dots = dots + "."; 
+    document.getElementById("dots1").innerHTML = dots;
+}
         </script>
     </body>
 </html>
