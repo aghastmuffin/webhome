@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<title> Generate a Secure Password! </title>
+<br>
+<h1> This website is under construction! </h1>
+<p id="codecomplete"> </p> 
+<br>
+<p id="code"> </p>
+<button onclick="myFunction()">Click to generate</button>
+<button onclick="myFunction2()" >Click to Copy to clipboard</button>
+
+<script>
+function copyToClipboard(text) {
+	var hi = "abcABC123!@#";
+    var sampleTextarea = document.createElement("textarea");
+    document.body.appendChild(sampleTextarea);
+    sampleTextarea.value = hi; //save main text in it
+   sampleTextarea.select(); //select textarea contenrs
+    document.execCommand("copy");
+    document.body.removeChild(sampleTextarea);
+}
+
+function myFunction2(){
+    var copyText = document.getElementById("myInput");
+    copyToClipboard(copyText.value);
+}
+
+//credit to: https://qawithexperts.com/article/javascript/creating-copy-to-clipboard-using-javascript-or-jquery/364#:~:text=Copy%20to%20Clipboard%20using%20Javascript%20on%20Input%20Element,clipboard%205%20Remove%20the%20textarea%20from%20the%20document.
+//opening function
+function myFunction() {
+  console.log("success! Started!")
+//declaring random variable
+//m = letters/characters
+//  var m = Math.floor(Math.random() * 26);
+  var times = Math.floor(Math.random() * 200);
+  var times1 = times;
+  var code = "";
+  while (times1 > 0) {
+  var m = Math.floor(Math.random() * 26);
+  if (m == 1) {
+    code = code + "a"
+  } 
+  if (m == 2) { 
+    code = code + "b"
+  }
+  if (m == 3) {
+    code = code + "c"
+  }
+  if (m == 4) {
+    code = code + "d"
+  }
+  if (m == 5) {
+    code = code + "e"
+  }
+  if (m == 6) {
+    code = code + "f"
+  }
+  if (m == 7) {
+    code = code + "g"
+  }
+  if (m == 8) {
+    code = code + "h"
+  }
+  if (m == 9) {
+    code = code + "i"
+  }
+  if (m == 10) {
+    code = code + "j"
+  }
+  if (m == 11) {
+    code = code + "k"
+  }
+  if (m == 12) {
+    code = code + "l"
+  }
+  if (m == 13) {
+    code = code + "m"
+  }
+  if (m == 14) {
+    code = code + "n"
+  }
+  if (m == 15) {
+    code = code + "o"
+  }
+  if (m == 16) {
+    code = code + "p"
+  }
+  if (m == 17) {
+    code = code + "q"
+  }
+  if (m == 18) {
+    code = code + "r"
+  }
+  if (m == 19) {
+    
+    code = code + "s"
+  }
+  if (m == 20) { 
+    code = code + "t"
+  }
+  if (m == 21) { 
+    code = code + "u"
+  }
+  if (m == 22) { 
+    code = code + "v"
+  }
+  if (m == 23) { 
+    code = code + "w"
+  }
+  if (m == 24) { 
+    code = code + "y"
+  }
+  if (m == 25) { 
+    code = code + "x"
+  }
+  if (m == 26) { 
+    code = code + "z"
+  }
+  var times1 = times1 - 1
+}
+  if (times1 == 0) {
+    document.getElementById("code").innerHTML = code;
+    document.getElementById("codecomplete").innerHTML = "Success! The code is:";
+  }
+}
+</script>
