@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+  <tt> Test</tt>
+  <br />
+  <tt id="text"> </tt> <br>
+  <button type="button" , onclick="myFunction()">Check</button>
+  <script>
+    function myFunction() {
+      let x = document.cookie;
+      console.log(x);
+      if (x === "login=admin") {
+        document.getElementById("text").innerHTML = "You are an admin!";
+      } else {
+        document.getElementById("text").innerHTML = "You aren't an admin!";
+      }
+    }
+  </script>
+</html>
