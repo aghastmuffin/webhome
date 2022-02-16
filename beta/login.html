@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+  <textarea id="password"> </textarea>
+  <button type="button" , onclick="myFunction()">login</button>
+  <br />
+  <br />
+  <tt> DEBUG: </tt>
+  <tt id="dots1"></tt>
+  <script>
+    function myFunction() {
+      var a = document.getElementById("password").value;
+      document.getElementById("dots1").innerHTML = a;
+      console.log(a);
+      var pswrd = "urmom";
+      if (a === pswrd) {
+        document.getElementById("dots1").innerHTML =
+          "Login complete! Welcome, Admin ";
+        document.cookie = "login=admin";
+        window.location.replace("https://aghastmuffin.github.io/webhome");
+      } else {
+        document.getElementById("dots1").innerHTML = "Login failed, sorry!";
+        //maybe lock out ip using geeks for geeks method or close page
+        window.location.replace("https://blocked.com-default.ws/");
+      }
+    }
+  </script>
+</html>
