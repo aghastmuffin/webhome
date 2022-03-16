@@ -130,11 +130,14 @@ function Upgrade() {
 	console.log("SYS: UPGRADE")
     	upgrades++;
     	console.log("SYS: success")
-	document.cookie = "upgrades=1; path=/beta/clickerwithautosave.html"; 
+	document.cookie = "upgrades=1;"; 
     }
 }  
 function Save() {
-	
+	document.cookie = "upgrades=" + upgrades;
+	document.cookie = "spendclicks=" + spendable;
+	document.cookie = "clicks=" + count;
+	document.getElementById("log").innerHTML = "Saved! Remember, this cookie will delete when you close the browser!";
 }  
 		</script>
 <script>
