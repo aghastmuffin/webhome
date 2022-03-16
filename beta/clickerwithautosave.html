@@ -33,6 +33,15 @@ var counting = 0;
 document.getElementById("demo").innerHTML = spendable;
 document.getElementById("totalc").innerHTML = count;
 document.getElementById("demo2").innerHTML = upgrades;
+let x = document.cookie;
+if (x === "") {
+//check if it is say save not found
+}
+else {
+//save found
+}
+//document.cookie = "login=admin"; to log
+//let x = document.cookie; to get cookies =D
 //0 off 1 on
 function myFunction() {
   console.log(count)
@@ -41,8 +50,7 @@ function myFunction() {
     spendable++;
     console.log("SYS: clicked")
     console.log(count)
-    document.getElementById("demo2").innerHTML = upgrades;
-    
+    document.getElementById("demo2").innerHTML = upgrades;    
   }
   else if (upgrades == 1) {
     count++;
@@ -68,6 +76,8 @@ function Upgrade() {
     }
 }    
 		</script>
+<script>
+</script>
 	</body>
 
 
