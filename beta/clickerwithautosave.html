@@ -23,6 +23,12 @@
 		<button onclick="myFunction()">Click</button>
 		<br>
 		<button onclick="Upgrade()">Click to upgrade</button>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<button onclick="Save()">Save</button>
 
 		<script>
 var count = 0;
@@ -30,17 +36,68 @@ var spendable = 0;
 var upgrade = 0;
 var upgrades = 0;
 var counting = 0;
+var save = 0;
 document.getElementById("demo").innerHTML = spendable;
 document.getElementById("totalc").innerHTML = count;
 document.getElementById("demo2").innerHTML = upgrades;
-let x = document.cookie;
-if (x === "") {
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+let x = 0;
+x = getCookie("saved")
+if (x === 1) {
 //check if it is say save not found
+alert("No save was found for this account, this might be because the browser was closed =( press 'ok' to make a new save!")
+document.cookie = "clicks=0;"; 
+document.cookie = "spendclicks=0;"; 
+document.cookie = "upgrades=0;"; 
+document.cookie = "saved=0;"; 
+
 }
 else {
-//save found
+	alert("save found! Loading save!");
+	
+	console.log("setting: SPENDABLE=")
+	console.log(getCookie("spendclicks"));
+	spendable = getCookie("spendclicks");
+	
+	console.log("setting: CLICKSCOUNT=");
+	console.log(getCookie("clicks"));
+	count = getCookie("clicks");
+	
+	console.log("setting: upgrades=");
+	console.log(getCookie("upgrades"));
+	upgrades = getCookie("upgrades");
+	saved = 1;
+	console.log("DONE LOADING SAVE!")
 }
 //document.cookie = "login=admin"; to log
+/* 
+CREDIT TO https://www.w3schools.com/js/js_cookies.asp and https://developer.mozilla.org/en-US/docs/web/api/document/cookie
+---------
+With JavaScript, a cookie can be created like this:
+
+document.cookie = "username=John Doe";
+You can also add an expiry date (in UTC time). By default, the cookie is deleted when the browser is closed:
+
+document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC";
+With a path parameter, you can tell the browser what path the cookie belongs to. By default, the cookie belongs to the current page.
+
+document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/"; 
+---------
+*/
 //let x = document.cookie; to get cookies =D
 //0 off 1 on
 function myFunction() {
@@ -73,8 +130,12 @@ function Upgrade() {
 	console.log("SYS: UPGRADE")
     	upgrades++;
     	console.log("SYS: success")
+	document.cookie = "upgrades=1; path=/beta/clickerwithautosave.html"; 
     }
-}    
+}  
+function Save() {
+	
+}  
 		</script>
 <script>
 </script>
