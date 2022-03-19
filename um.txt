@@ -1,0 +1,5 @@
+internal server error
+server down for repairs
+we should be done soon!
+(This could be because an internal error caused the server to crash, invalid credientals, or purposeful ban.)
+We're sorry for the inconvenience
