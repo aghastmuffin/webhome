@@ -1,0 +1,66 @@
+<!DOCTYPE html>	
+<script>
+	
+	/* Add "https://api.ipify.org?format=json" statement
+			this will communicate with the ipify servers in
+			order to retrieve the IP address $.getJSON will
+			load JSON-encoded data from the server using a
+			GET HTTP request 
+				
+	$.getJSON("https://api.ipify.org?format=json", function(data) {
+		
+		// Setting text of element P with id gfg
+		$("#gfg").html(data.ip);
+	})
+  */
+  
+  function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+//START THE CHECK
+try {
+  let x = getCookie("banned");
+  try {
+  let checked = getCookie("checked");
+  }
+  catch (error) {
+  let x = 0;
+  let checked = 0;
+  console.error("an unexpected error occured")
+  console.error(error)
+  }
+} catch (error) {
+//  console.error(error);
+  let x = 0;
+  let checked = 0;
+  console.error("an unexpected error occured")
+  console.error(error)
+}
+if (x === 1) {
+  window.location.replace("https://aghastmuffin.github.io/webhome/banned.html");
+  setCookie("checked", "1", "1")
+}
+else {
+  window.location.replace("https://aghastmuffin.github.io/webhome/");
+  setCookie("checked", "1", "1")
+//  document.cookie("checked=1")
+}
+</script>
