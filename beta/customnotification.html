@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+ <tt> Link </tt> <br>
+ <textarea id="link"></textarea><br>
+ <tt> Head (title) </tt> <br>
+ <textarea id="head"></textarea><br>
+ <tt>body (middle text) </tt> <br>
+ <textarea id="body"></textarea><br>
+ <tt>icon (provide as image link)</tt> <br>
+ <textarea id="icon"></textarea><br>
+ <button onclick="notifyMe()">Notify me!</button>
+<body>
+<script>
+// request permission on page load
+document.addEventListener('DOMContentLoaded', function() {
+ if (!Notification) {
+  alert('Desktop notifications not available in your browser. Try Chromium.');
+  return;
+ }
+
+ if (Notification.permission !== 'granted')
+  Notification.requestPermission();
+});
+
+function notifyMe() {
+var head = document.getElementById("head").value;
+var body = document.getElementById("body").value;
+var link = document.getElementById("link").value;
+var icon = document.getElementById("icon").value;
+if (icon === "") {
+	alert("NO ICON PROVIDED, DEFAULTING TO DUOLINGO ICON");
+    icon = "https://i.imgur.com/JzvJC6O.png";
+}
+if (link === "") {
+	alert("NO LINK PROVIDED, DEFAULTING TO IMAGE LINK")
+    link = icon;
+}
+ if (Notification.permission !== 'granted')
+  Notification.requestPermission();
+ else {
+  var notification = new Notification(head, {
+   icon: icon,
+   body: body,
+  });
+  notification.onclick = function() {
+   window.open(link);
+  };
+ }
+}
+</script>
+</body>
+
+</html>
