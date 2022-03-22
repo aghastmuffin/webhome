@@ -22,18 +22,23 @@ document.addEventListener('DOMContentLoaded', function() {
  if (Notification.permission !== 'granted')
   Notification.requestPermission();
 });
-
+var notificationsnum = 0;
 function notifyMe() {
+notificationsnum++;
 var head = document.getElementById("head").value;
 var body = document.getElementById("body").value;
 var link = document.getElementById("link").value;
 var icon = document.getElementById("icon").value;
 if (icon === "") {
+if (notificationsnum == 1) {
 	alert("NO ICON PROVIDED, DEFAULTING TO DUOLINGO ICON");
-    icon = "https://i.imgur.com/JzvJC6O.png";
+}
+icon = "https://i.imgur.com/JzvJC6O.png";
 }
 if (link === "") {
+if (notificationsnum === 1) {
 	alert("NO LINK PROVIDED, DEFAULTING TO IMAGE LINK")
+}
     link = icon;
 }
  if (Notification.permission !== 'granted')
