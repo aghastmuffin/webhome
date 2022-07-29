@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<input type="file" onchange="loadplay()"> <br> <br>
+<button id="playbtn" onclick="audio()"></button>
+<script>
+function loadplay(){
+    //ideally we would check for audio (.mp3, .wav, ect.)
+    document.getElementById("playbtn").innerHTML = "Play";
+//    document.getElementById("playbtn").onclick = "audio()";
+    console.log("finished loading pb")
+}
+function audio(){
+    console.log("start")
+    const file = document.querySelector('input[type=file]').files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener("load", () => {
+    // convert image file to base64 string
+        var music1 = new Audio(reader.result);
+        music1.play()
+    }, false);
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+}
+function naf(){
+    //stands for no audio found (used if file isn't uploaded)
+    alert("Runtime error. NAF No file found")
+}
+</script>
