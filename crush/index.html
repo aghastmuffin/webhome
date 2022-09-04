@@ -18,7 +18,9 @@ var xhttp = new XMLHttpRequest();
 //      this.responseText;
       let json = this.responseText;
       console.log(json)
-      let a = JSON.parse(json)
+      let a = JSON.parse(json);
+      let b = a.search;
+      console.log(b)
       document.getElementById("reply").innerHTML =
       "for the search query: ", this.responseText, "we found (number of people with known crushes on you (as of last update)): ";
 
