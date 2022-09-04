@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<title> Find BPC crushes</title>
+  <p> Data not up to date, last updated </p> <br>
+  <p>response: </p>
+  <p id="reply"> </p>
+
+  <form>
+    <input type="text" name="query" id="query">
+  </form>
+  <button onclick=""> </button>
+<!-- set data from last updated - curdate -->
+<script>
+function lookup(){
+let search = document.getElementById("query").value;
+console.log(search, ". searching")
+var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+//      document.getElementById("reply").innerHTML =
+//      this.responseText;
+      let json = this.responseText;
+      let a = json.parse()
+      document.getElementById("reply").innerHTML =
+      "for the search query: ", this.responseText, "we found (number of people with known crushes on you (as of last update)): ";
+
+    }
+  };
+  xhttp.open("GET", "ips.txt", true);
+  xhttp.send();
+}
+
+</script>
