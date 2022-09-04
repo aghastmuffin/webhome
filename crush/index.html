@@ -7,7 +7,7 @@
   <form>
     <input type="text" name="query" id="query">
   </form>
-  <button onclick=""> </button>
+  <button onclick="lookup()">look up!</button>
 <!-- set data from last updated - curdate -->
 <script>
 function lookup(){
@@ -25,7 +25,7 @@ var xhttp = new XMLHttpRequest();
 
     }
   };
-  xhttp.open("GET", "ips.txt", true);
+  xhttp.open("GET", "crush.txt", true);
   xhttp.send();
 }
 
