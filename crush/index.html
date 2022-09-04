@@ -19,14 +19,13 @@ var xhttp = new XMLHttpRequest();
 //      document.getElementById("reply").innerHTML =
 //      this.responseText;
       let json = this.responseText;
-      let a = json.parse()
+      let a = JSON.parse(json)
       document.getElementById("reply").innerHTML =
       "for the search query: ", this.responseText, "we found (number of people with known crushes on you (as of last update)): ";
 
     }
   };
-//  xhttp.open("GET", "crush.txt", true);
-  xhttp.open("GET", "crush.json", true);
+  xhttp.open("GET", "ips.txt", true);
   xhttp.send();
 }
 
