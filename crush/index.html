@@ -17,9 +17,11 @@ var xhttp = new XMLHttpRequest();
 //      document.getElementById("reply").innerHTML =
 //      this.responseText;
       let a = this.responseText;
+      let b1 = a.split("\n") 
       let b = a.split("|")
       console.log(b)
       //start proccessing
+      let i = 0;
       while(i === search){
         i++;
         b[i];
