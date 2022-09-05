@@ -16,17 +16,20 @@ var xhttp = new XMLHttpRequest();
     if (this.readyState == 4 && this.status == 200) {
 //      document.getElementById("reply").innerHTML =
 //      this.responseText;
-      let json = this.responseText;
-      console.log(json)
-      let a = JSON.parse(json);
-      let b = a.search;
+      let a = this.responseText;
+      let b = a.split("|")
       console.log(b)
+      //start proccessing
+      while(i === search){
+        i++;
+        b[i];
+      }
       document.getElementById("reply").innerHTML =
       "for the search query: ", this.responseText, "we found (number of people with known crushes on you (as of last update)): ";
 
     }
   };
-  xhttp.open("GET", "crush.json", true);
+  xhttp.open("GET", "crush.txt", true);
   xhttp.send();
 }
 
