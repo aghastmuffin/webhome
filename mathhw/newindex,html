@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.parallax {
+  /* The image used */
+  background-image: url("https://i.imgur.com/Y8jXw9k.png");
+
+  /* Set a specific height */
+  min-height: 750px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+.parallax1 {
+  /* The image used */
+  background-image: url("https://i.imgur.com/XUR1uS0.png");
+
+  /* Set a specific height */
+  min-height: 700px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+.parallax2 {
+  /* The image used */
+  background-image: url("https://i.imgur.com/JXIATD9.png");
+
+  /* Set a specific height */
+  min-height: 700px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+body{
+    background-color: black;
+}
+p{
+    color: grey;
+}
+div{
+	color: grey;
+}
+</style>
+</head>
+<body>
+
+<p>I would describe my experience with math rocky, because I had some good teachers, and some captivating teachers, some boring teachers, and some incompetent teachers. My earliest math memory is doing basic arithmetic, like 5+7 and 8-7 on a bench in aftercare.
+</p>
+
+<div class="parallax"></div>
+
+<div style="height:100px;">
+Mathematically I would describe myself okay, mr. G’s class was a good challenge for me, while mr. holmes class was frustrating and easy (frustrating because he would give a problem like 30*6 then say the answer was something like 100, so I thought I made the error not him).
+	I feel ok about math, I had a little trouble memorizing times tables
+</div>
+<div class="parallax1"> </div>
+
+<div style="height:100px;">
+ but overall I think I'm ok at math, although its hard memorizing all the formulas for area and volume i.e circle, triangle, square, ect I’d say my most memorable math moment was probably… uh… in I think fourth grade when we finished a project about a sandwich (I don’t remember much) but I remember it was tricky, and when I finally finished I was really proud of myself.
+</div>
+<div class="parallax2"> </div>
+
+<div style="height:100px;">
+
+</div>
+</body>
+</html>
+
+
