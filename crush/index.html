@@ -24,9 +24,10 @@ var xhttp = new XMLHttpRequest();
       
       //start proccessing
       let i = 0;
-      while(i !== search){
+      let c = ""
+      while(c !== search){
         i++;
-        b[i];
+        c = b[i];
       }
       document.getElementById("reply").innerHTML =
       "for the search query: ", this.responseText, "we found (number of people with known crushes on you (as of last update)): ";
