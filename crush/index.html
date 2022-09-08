@@ -28,9 +28,11 @@ var xhttp = new XMLHttpRequest();
       while(c !== search){
         i++;
         c = b[i];
+        console.log(c)
       }
+      c = b[i + 1]
       document.getElementById("reply").innerHTML =
-      "for the search query: ", this.responseText, "we found (number of people with known crushes on you (as of last update)): ";
+      "for the search query: ", this.responseText, "we found (number of people with known crushes on you (as of last update)): ", c;
 
     }
   };
