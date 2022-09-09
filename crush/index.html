@@ -26,9 +26,11 @@ var xhttp = new XMLHttpRequest();
       let i = 0;
       let c = ""
       while(c !== search){
+        //change as we add more numbers, the 50 is the timeout
         i++;
         c = b[i];
         console.log(c)
+        }
       }
       c = b[i + 1]
       document.getElementById("reply").innerHTML =
