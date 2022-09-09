@@ -17,7 +17,7 @@ var xhttp = new XMLHttpRequest();
 //      document.getElementById("reply").innerHTML =
 //      this.responseText;
       let a = this.responseText;
-      let b1 = a.split("\n") 
+//      let b1 = a.split("\n") 
       let b = a.split("|")
       console.log(b)
       console.log(a)
@@ -32,6 +32,8 @@ var xhttp = new XMLHttpRequest();
         console.log(c)
       }
       c = b[i + 1]
+      console.log("c new", c)
+      console.log("a", a)
       document.getElementById("reply").innerHTML =
       "for the search query: ", a, "we found (number of people with known crushes on you (as of last update)): ", c;
 
