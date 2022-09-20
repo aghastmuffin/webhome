@@ -46,6 +46,8 @@ var xhttp = new XMLHttpRequest();
   };
   xhttp.open("GET", "crush.txt", true);
   xhttp.send();
+  document.getElementById("reply").innerHTML =
+  "for the search query: ", search, "we found (number of people with known crushes on you (as of last update)): ", c;
 }
 
 </script>
