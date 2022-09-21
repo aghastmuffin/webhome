@@ -10,6 +10,7 @@
 <script>
 function lookup(){
 let search = document.getElementById("query").value;
+let c = "";
 console.log(search, ". searching")
 var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -23,7 +24,7 @@ var xhttp = new XMLHttpRequest();
       console.log(a)
             //start proccessing
       let i = 0;
-      let c = ""
+      c = ""
       while(c !== search){
         
             //1176 breakpoint maybe take down to lower
