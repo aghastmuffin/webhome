@@ -21,22 +21,17 @@ var xhttp = new XMLHttpRequest();
       let b = a.split("|")
       console.log(b)
       console.log(a)
-      
-      //start proccessing
+            //start proccessing
       let i = 0;
       let c = ""
       while(c !== search){
-        if (i < 1176) {
+        
             //1176 breakpoint maybe take down to lower
         //change as we add more numbers, the 50 is the timeout also fix that it starts on 1 and counts, even though 0 is valid data
         i++;
         c = b[i];
         console.log("i", i)
         console.log("c", c)
-        }
-        else{
-          alert("error we couldn't find that person')
-        }
       }
       c = b[i + 1]
       console.log("c new", c)
