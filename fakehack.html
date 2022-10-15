@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: black;
+}
+tt{
+ color: #03ff46;
+}
+</style>
+</head>
+<body>
+<tt id="code">testing</tt>
+<script>
+window.onload = function(){
+    var demo = document.getElementById('code');
+  
+    window.onkeydown= function(gfg){
+        if(gfg.keyCode < 200){
+            value++;
+            demo.innerHTML = value;
+        };
+    };
+};    
+</script>
+</body>
+</html>
