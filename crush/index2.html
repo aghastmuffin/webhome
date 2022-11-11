@@ -12,6 +12,7 @@ function lookup(){
 let search = document.getElementById("query").value;
 let c = "";
 document.getElementById("reply").innerHTML = "searching!";
+xhttp.open("GET", "crush.txt", true);
 var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -35,9 +36,8 @@ var xhttp = new XMLHttpRequest();
 
     }
   };
-  document.getElementById("reply").innerHTML = "for the search query: ", search, "we found (number of people with known crushes on you (as of last update)): ", c;
-  xhttp.open("GET", "crush.txt", true);
   xhttp.send();
+  document.getElementById("reply").innerHTML = "for the search query: ", search, "we found (number of people with known crushes on you (as of last update)): ", c;
 }
 
 </script>
