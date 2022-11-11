@@ -35,8 +35,7 @@ var xhttp = new XMLHttpRequest();
 
     }
   };
-  document.getElementById("reply").innerHTML =
-  "for the search query: ", search, "we found (number of people with known crushes on you (as of last update)): ", c;
+  document.getElementById("reply").innerHTML = "for the search query: ", search, "we found (number of people with known crushes on you (as of last update)): ", c;
   xhttp.open("GET", "crush.txt", true);
   xhttp.send();
 }
