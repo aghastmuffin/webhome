@@ -11,7 +11,7 @@
 function lookup(){
 let search = document.getElementById("query").value;
 let c = "";
-console.log(search, ". searching")
+document.getElementById("reply").innerHTML = "searching!";
 var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -22,33 +22,23 @@ var xhttp = new XMLHttpRequest();
       let b = a.split("|")
       console.log(b)
       console.log(a)
-            //start proccessing
+      //filter to see what search equals
       let i = 0;
-      c = ""
       while(c !== search){
-        
-            //1176 breakpoint maybe take down to lower
-        //change as we add more numbers, the 50 is the timeout also fix that it starts on 1 and counts, even though 0 is valid data
+        //currently no breakpoint (CASE SENSITIVE ALL NAMES ARE LOWERCASE)
         i++;
         c = b[i];
         console.log("i", i)
         console.log("c", c)
       }
       c = b[i + 1]
-      console.log("c new", c)
-      console.log(typeof c)
-      console.log("search", search)
-      console.log(typeof search)
-      console.log("for the search query: ", search, "we found (number of people with known crushes on you (as of last update)): ", c)
-      alert("for the search query: " + search + " we found (number of people with known crushes on you (as of last update)): " + c)
-      document.getElementById("reply").innerHTML = "for the search query: ", search, "we found (number of people with known crushes on you (as of last update)): ", c;
 
     }
   };
-  xhttp.open("GET", "crush.txt", true);
-  xhttp.send();
   document.getElementById("reply").innerHTML =
   "for the search query: ", search, "we found (number of people with known crushes on you (as of last update)): ", c;
+  xhttp.open("GET", "crush.txt", true);
+  xhttp.send();
 }
 
 </script>
