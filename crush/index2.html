@@ -21,19 +21,15 @@ var xhttp = new XMLHttpRequest();
       let a = this.responseText;
 //      let b1 = a.split("\n") 
       let b = a.split("|")
-      console.log(b)
-      console.log(a)
       //filter to see what search equals
       let i = 0;
       while(c !== search){
         //currently no breakpoint (CASE SENSITIVE ALL NAMES ARE LOWERCASE)
         i++;
         c = b[i];
-        console.log("i", i)
-        console.log("c", c)
       }
       c = b[i + 1]
-
+      document.getElementById("reply").innerHTML = "we found (number of people with known crushes on you (as of last update)): ", c;
     }
   };
   xhttp.send();
