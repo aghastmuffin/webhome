@@ -10,16 +10,17 @@
 
 <script>
 function loadXMLDoc() {
+  let a = "";
+  let search = document.getElementById("query").value;
+  let c = "";
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML =
-      this.responseText;
+        a = this.responseText;
     }
   };
   xhttp.open("GET", "crush.txt", true);
   xhttp.send();
-  let a = this.responseText;
 //      let b1 = a.split("\n") 
   let b = a.split("|")
       //filter to see what search equals
