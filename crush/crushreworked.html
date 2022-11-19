@@ -4,7 +4,7 @@
 
 <h2>Using the XMLHttpRequest Object</h2>
 
-<div id="demo">
+  <tt id="reply"></tt>
 <button type="button" onclick="loadXMLDoc()">Change Content</button>
 </div>
 
@@ -19,7 +19,20 @@ function loadXMLDoc() {
   };
   xhttp.open("GET", "crush.txt", true);
   xhttp.send();
+  let a = this.responseText;
+//      let b1 = a.split("\n") 
+  let b = a.split("|")
+      //filter to see what search equals
+  let i = 0;
+  while(c !== search){
+        //currently no breakpoint (CASE SENSITIVE ALL NAMES ARE LOWERCASE)
+    i++;
+    c = b[i];
+  }
+  c = b[i + 1]
+  document.getElementById("reply").innerHTML = "we found (number of people with known crushes on you (as of last update)): ", c;
 }
+
 </script>
 
 </body>
