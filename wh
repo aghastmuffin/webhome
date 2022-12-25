@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is my screen height/width</title>
+    <script>
+        function getwh(){
+            document.getElementById("height").innerHTML = window.screen.height;
+            document.getElementById("width").innerHTML = window.screen.height;
+        }
+    </script>
+    <noscript>
+        <p>this website cannot be used without javascript, please enable it or use another browser that supports it</p>
+    </noscript>
+</head>
+<body>
+    <tt>height:</tt>
+    <tt id="height"></tt> <br>
+    <tt>width:</tt>
+    <tt id="width"></tt>
+    <button onclick="">get height and width</button>
+</body>
+</html>
