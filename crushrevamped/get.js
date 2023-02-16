@@ -1,6 +1,6 @@
 console.clear();
 var ajax = new XMLHttpRequest();
-ajax.open("GET", "D:/codeprojects/Crushfindr/crushdata.txt", true);
+ajax.open("GET", "webhome/crushrevamped/crushdata.txt", true);
 ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
 let a = "";
 let debug = 0;
