@@ -32,10 +32,8 @@ function search(){
         console.log(a, b)
         i = 0;
         while (c !== search){
-            if (i > 200){
             i++;
             c = b[i];
-            };
         };
         c = b[i + 1];
         document.getElementById("output").innerHTML = c;
