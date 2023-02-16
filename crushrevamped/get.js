@@ -35,7 +35,7 @@ function search(){
             i++;
             c = b[i];
         };
-        document.getElementById("output").innerHTML = c;
+        document.getElementById("output").innerHTML = i;
     } else{
         console.error("WEB ERROR :: ERROR")
         console.error("--BEGIN--")
