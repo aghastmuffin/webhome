@@ -57,8 +57,8 @@ fetch(url, {
 //queue up data, in case it isn't present in github !!
 document.cookie = "datawritten=" + content1;
 }
-function PHP_fetch(owner, repo, path){
-    var url = `https://raw.githubusercontent.com/${owner}/${repo}/${path}`
+function PHP_fetch(owner, repo, branch, path){
+    var url = `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${path}`
     try{
     fetch(url).then(response => response.json());
     return response;
