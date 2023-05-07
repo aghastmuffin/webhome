@@ -14,7 +14,7 @@ function PHP_GET_(varname){
         return null
     }
 }
-function PHP_POST_(){
+function PHP_POST(){
     console.log("POST_ not avaiable yet.")
 }
 function PHP_isset(variable){
@@ -27,6 +27,19 @@ function PHP_isset(variable){
             return 1
         }
     }
+}
+function PHP_sha(owner, repo, token){
+    fetch(`https://api.github.com/repos/${owner}/${repo}/commits`, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        const sha = data[1].sha;
+        return sha; // prints the SHA of the previous commit
+      })
+      .catch(error => console.error(error));
 }
 function PHP_fopen(url, owner, repo, path, token, content1, message1, sha1){
     console.log("this is designed, and ONLY works for GITHUB PAGES, or any GITHUB repo")
@@ -71,6 +84,6 @@ function PHP_fetch(owner, repo, branch, path){
         }
     }
 }
-function PHP_CRED(){
+function PHP_cred(){
     console.log("Made by Kingve");
 }
