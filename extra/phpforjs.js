@@ -1,11 +1,11 @@
 //php for github pages, coded in javascript, for javascript.
 var init = 0;
-
+console.log("php extras init complete!");
 function phpinit(){
     //confirm you want to use php module in this script.
     init = 1;
 }
-function PHP_GET_(varname){
+function PHP_GET(varname){
     try{
         let params = new URLSearchParams(location.search);
         return params.getAll('name')
