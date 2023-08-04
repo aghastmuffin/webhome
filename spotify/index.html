@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Minispot.py EARLY ACCESS</title>
+    <script>
+        const params = new URL(location.href).searchParams;
+        const code = params.get('code');
+        document.getElementById("code").innerHTML = code;
+        function copy(){
+            navigator.clipboard.writeText(code);
+            alert("Success!")
+        }
+    </script>
 </head>
 <body>
-    <h1>Authentication Complete</h1>
+    <h1>Authentication Complete! Now all you have to do is copy the code below</h1>
+    <tt>Your code is</tt>
+    <tt id="code"></tt> <button onclick="copy"></button>
 </body>
 </html>
