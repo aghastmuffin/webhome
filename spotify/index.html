@@ -7,18 +7,26 @@
     <script>
         const params = new URL(location.href).searchParams;
         const code = params.get('code');
-        document.getElementById("code").innerHTML = code;
-        console.log(code)
-        function copy(){
-            navigator.clipboard.writeText(code);
-            alert("Success!")
+
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("code").textContent = code;
+        });
+
+        function copy() {
+            const codeElement = document.getElementById("code");
+            const textToCopy = codeElement.textContent;
+
+            navigator.clipboard.writeText(textToCopy).then(function() {
+                alert("Success! Code copied to clipboard.");
+            }).catch(function() {
+                alert("Copying failed. Please copy the code manually.");
+            });
         }
-        
     </script>
 </head>
 <body>
     <h1>Authentication Complete! Now all you have to do is copy the code below</h1>
     <tt>Your code is</tt>
-    <tt id="code"></tt> <button onclick="copy">copy</button>
+    <tt id="code"></tt> <button onclick="copy()">Copy</button>
 </body>
 </html>
