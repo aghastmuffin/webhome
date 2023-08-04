@@ -8,10 +8,12 @@
         const params = new URL(location.href).searchParams;
         const code = params.get('code');
         document.getElementById("code").innerHTML = code;
+        console.log(code)
         function copy(){
             navigator.clipboard.writeText(code);
             alert("Success!")
         }
+        
     </script>
 </head>
 <body>
