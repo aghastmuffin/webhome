@@ -7,6 +7,19 @@
     <script>
         const params = new URL(location.href).searchParams;
         const code = params.get('code');
+        const socket = new WebSocket("ws://localhost:8765");
+
+        socket.onopen = (event) => {
+            socket.send(code);
+        };
+        socket.onmessage = (event) => {
+            if (event.data === 200){
+                alert("You can ignore this page! everything went smoothly!");
+            } else{
+                alert("Please follow the instructions on this website. \\n [ERROR:WEBSOCKET DOWN OR RESPONSE NOT RECIEVED!]");
+            }
+        };
+
 
         document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("code").textContent = code;
