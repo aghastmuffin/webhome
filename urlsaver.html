@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Url Holder</title>
+    <script defer>
+let num = 1;
+function add() {
+      // Create a new input element
+      num = num + 1;
+      var newInput = document.createElement("input");
+      newInput.type = "text";
+      newInput.placeholder = "url here";
+      newInput.id = num;
+      // Get the container
+      var container = document.getElementById("inputContainer");
+
+      // Append the new input element to the container
+      container.appendChild(newInput);
+      var br = document.createElement("br");
+      container.appendChild(br);
+}
+
+
+    </script>
+</head>
+<body>
+    <div id="inputContainer">
+    <input type="text" placeholder="url here" id='1'> <br>
+    </div>
+    <button onclick="add()">Add a new slot</button>
+</body>
+</html>
