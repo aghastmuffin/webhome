@@ -13,7 +13,7 @@
             socket.send(code);
         };
         socket.onmessage = (event) => {
-            if (event.data === 200){
+            if (event.data === "200"){ //message sent back from client.
                 alert("You can ignore this page! everything went smoothly!");
             } else{
                 alert("Please follow the instructions on this website. \\n [ERROR:WEBSOCKET DOWN OR RESPONSE NOT RECIEVED!]");
