@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Video Player</title>
+</head>
+<body>
+    <h1>Upload and Loop Video</h1>
+    
+    <!-- Input for video upload -->
+    <input type="file" id="videoFile" accept="video/*">
+    
+    <!-- Video element for playback -->
+    <video id="videoPlayer" width="640" height="360" controls loop>
+        Your browser does not support the video tag.
+    </video>
+    
+    <script>
+        // Function to handle video file selection
+        function handleVideoUpload() {
+            const videoFileInput = document.getElementById("videoFile");
+            const videoPlayer = document.getElementById("videoPlayer");
+            
+            const selectedVideo = videoFileInput.files[0];
+            if (selectedVideo) {
+                const videoURL = URL.createObjectURL(selectedVideo);
+                videoPlayer.src = videoURL;
+                videoPlayer.play();
+            } else {
+                alert("Please select a valid video file.");
+            }
+        }
+        
+        // Add event listener to the file input
+        document.getElementById("videoFile").addEventListener("change", handleVideoUpload);
+    </script>
+</body>
+</html>
