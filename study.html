@@ -3,7 +3,16 @@
 
 <!-- Include Google API Client Library -->
 <script src="https://apis.google.com/js/api.js"></script>
-
+<html>
+  <body>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <div id="g_id_onload"
+         data-client_id="YOUR_CLIENT_ID"
+         data-callback="handleCredentialResponse">
+    </div>
+    <div class="g_id_signin" data-type="standard"></div>
+  </body>
+</html>
 <!-- Your JavaScript code -->
 <script>
   // Load the Google API client library
