@@ -1,0 +1,46 @@
+<!-- HTML button -->
+<button id="generateDocButton">Generate Google Docs</button>
+
+<!-- Include Google API Client Library -->
+<script src="https://apis.google.com/js/api.js"></script>
+
+<!-- Your JavaScript code -->
+<script>
+  document.getElementById('generateDocButton').addEventListener('click', generateGoogleDoc);
+
+  function generateGoogleDoc() {
+    // Your code to authenticate the user using OAuth 2.0
+    // (Refer to Google API documentation for details)
+
+    // After authentication, use the Google Docs API to create a document
+    gapi.client.docs.documents.create({
+      title: 'Your Document Title'
+    }).then(response => {
+      console.log('Document created:', response);
+
+      // Get the document ID from the response
+      const documentId = response.result.documentId;
+
+      // Embed the document using an iframe
+      embedGoogleDoc(documentId);
+    }).catch(error => {
+      console.error('Error creating document:', error);
+    });
+  }
+
+  function embedGoogleDoc(documentId) {
+    // Create an iframe and set its source to the Google Docs URL
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://docs.google.com/document/d/${documentId}/preview`;
+    iframe.width = '100%';
+    iframe.height = '600'; // Set the desired height
+
+    // Append the iframe to a container on your website
+    const container = document.getElementById('docContainer');
+    container.innerHTML = ''; // Clear previous content
+    container.appendChild(iframe);
+  }
+</script>
+
+<!-- Container to hold the embedded document -->
+<div id="docContainer"></div>
